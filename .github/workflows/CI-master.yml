@@ -25,12 +25,13 @@ jobs:
         with:
           github-token: ${{ github.token }}
           script: |
-            echo -e "\n*** Hurray basic test passed ***\n"
+            return "\n*** Hurray basic test passed ***\n"
       - name: Test Fail
         if: failure()
         uses: actions/github-script@0.2.0
         with:
           github-token: ${{ github.token }}
-          script: echo -e "\n*** Dooo! basic test failed ***\n"  
+          script: | 
+            return "\n*** Dooo! basic test failed ***\n"  
   
   
