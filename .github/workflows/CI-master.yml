@@ -21,12 +21,12 @@ jobs:
         run: ./gradlew test --tests "*"
       - name: Test Success
         if: success()
-        with:
+        run:
           script: |
             echo -e "\n### Hurray basic test passed ###\n"
       - name: Test Fail
         if: failure()
-        with:
+        run:
           script: |
             echo -e "\n### Dooo! basic test failed ###\n"  
   
