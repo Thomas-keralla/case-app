@@ -19,5 +19,15 @@ jobs:
         run: ./gradlew build --scan --no-daemon
       - name: Test
         run: ./gradlew test --tests "*"
+      - name: Test Success
+        if: success()
+        with:
+          script: |
+            echo -e "\n### Hurray basic test passed ###\n"
+      - name: Test Fail
+        if: failure()
+        with:
+          script: |
+            echo -e "\n### Dooo! basic test failed ###\n"  
   
   
