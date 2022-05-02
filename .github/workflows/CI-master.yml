@@ -37,6 +37,9 @@ jobs:
     name: Publish Artifact
     needs: build-test
     runs-on: ubuntu-latest
+    env:
+      DOCKER_USER: ${{ secrets.DOCKER_HUB_USER }} 
+      DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASS }}"
     #permissions:
     #  packages: write
     #  contents: read
@@ -47,8 +50,6 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
-        script: | 
-        echo "${{ secrets.DOCKER_HUB_USER }} ${{ secrets.DOCKER_HUB_PASS }}"
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_PASS }}
     
