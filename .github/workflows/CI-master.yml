@@ -23,11 +23,10 @@ jobs:
         if: success()
         run:
           script: |
-            echo -e "\n### Hurray basic test passed ###\n"
+            echo -e "\n*** Hurray basic test passed ***\n"
       - name: Test Fail
         if: failure()
         run:
-          script: |
-            echo -e "\n### Dooo! basic test failed ###\n"  
+          script: echo -e "\n*** Dooo! basic test failed ***\n"  
   
   
