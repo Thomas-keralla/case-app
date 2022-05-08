@@ -1,0 +1,8 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: devops-case
+deploy:
+  kubectl:
+    manifests: 
+    - manifests.yml

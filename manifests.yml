@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: devops-case-AltaPay
+ namespace: devops-case
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: AltaPay
+ template:
+   metadata:
+     labels:
+       app: AltaPay
+   spec:
+     containers:
+     - name: AltaPay
+       image: test
+       resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
+       ports:
+       - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-AltaPay-svc
+spec:
+  selector:
+    app: AltaPay
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
