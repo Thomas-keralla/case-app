@@ -41,7 +41,7 @@ jobs:
       - name: Change image url for manifests.yml
         run: |
           export ECR_REPOSITORY=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}
-          sed -i "s,image: changeme,image: $ECR_REPOSITORY/case-app,g" manifests.yml  
+          sed -i "s,image: changeme,image: $ECR_REPOSITORY:case-app,g" manifests.yml  
       - name: test manifests.yml
         run: |
           echo "TEST ##########" && ls -a && cat manifests.yml
