@@ -42,6 +42,9 @@ jobs:
         run: |
           export ECR_REPOSITORY=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}
           sed -i "s,image: changeme,image: $ECR_REPOSITORY/case-app,g" manifests.yml  
+      - name: test manifests.yml
+        run: |
+          cat manifest.yml
       # Install kubectl
       - name: Install kubectl
         run: |
