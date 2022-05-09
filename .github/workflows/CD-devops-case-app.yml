@@ -25,8 +25,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: sanitycheck
         run: cat manifests.yml
+        
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -40,9 +42,9 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       
-      - name: Change image url for manifests.yml
-        run: |
-          pwd && ls -a && cat ./manifests.yml && sed -i "/image:.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/" manifests.yml                                                                                    4308  02:52:42  
+      #- name: Change image url for manifests.yml
+      #  run: |
+          pwd && ls -a && cat ./manifests.yml && sed -i "/image.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/" manifests.yml                                                                                    4308  02:52:42  
 
       - name: test manifests.yml
         run: |
