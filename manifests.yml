@@ -15,7 +15,7 @@ spec:
    spec:
      containers:
      - name: altapay
-       image: changeme
+       image: 147588834276.dkr.ecr.eu-central-1.amazonaws.com
        resources:
           limits:
             memory: 128Mi
