@@ -44,7 +44,7 @@ jobs:
       
       - name: Change image url for manifests.yml
         run: |
-          #pwd && ls -a && cat ./manifests.yml && sed -i "/image.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/" manifests.yml
+          pwd && ls -a && cat ./manifests.yml && sed -i "/image.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/" manifests.yml
       # Install kubectl
       - name: Install kubectl
         run: |
