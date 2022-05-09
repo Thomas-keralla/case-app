@@ -15,7 +15,7 @@ spec:
    spec:
      containers:
      - name: altapay
-       image: 147588834276.dkr.ecr.eu-central-1.amazonaws.com
+       image: 147588834276.dkr.ecr.eu-central-1.amazonaws.com/devops-case-docker-ecr:case-app
        resources:
           limits:
             memory: 128Mi
