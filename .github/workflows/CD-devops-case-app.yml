@@ -41,7 +41,7 @@ jobs:
       
       - name: Change image url for manifests.yml
         run: |
-          pwd && ls -a && cat ./manifests.yml | sed -i "/image:.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/"                                                                                     4308  02:52:42  
+          pwd && ls -a && cat ./manifests.yml && sed -i "/image:.*$/ s/$/\/$ECR_REPOSITORY\/$ECR_IMAGE/" manifests.yml                                                                                    4308  02:52:42  
 
       - name: test manifests.yml
         run: |
